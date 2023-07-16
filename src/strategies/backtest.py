@@ -1,5 +1,3 @@
-# backtest.py
-
 import argparse
 import logging
 import pandas as pd
