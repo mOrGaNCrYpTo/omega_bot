@@ -1,0 +1,25 @@
+Here's a summary of what we've done so far:
+
+Problem Definition: We started with the goal of creating a trading bot that uses machine learning to predict cryptocurrency prices. The bot will be trained on historical price data from the Kucoin exchange.
+
+Data Collection: We wrote a method in C# to fetch historical price data from Kucoin's API. We chose to fetch data for three trading pairs: "BTC-USDT", "ETH-USDT", and "HYVE-USDT". We fetched hourly data for the past six months.
+
+Data Storage: We stored the fetched data in a SQL Server database using Entity Framework for .NET. We created a table with the following columns: symbol, openTime, openPrice, closePrice, highPrice, lowPrice, volume.
+
+Data Export: We exported the data from SQL Server to a CSV file. This CSV file will be used to train our machine learning model.
+
+Data Analysis: We performed a preliminary analysis of the data. We checked the data for missing values and found none. We also checked the data's time range and found that it spans from 2020-08-15 to 2023-06-13.
+
+Feature Engineering: We discussed the need to create lagged features for our machine learning model. These features represent the values of certain columns (like 'closePrice') at previous points in time. We discussed using the LAG() function in SQL Server to create these features.
+
+Data Loading and Preparation: We've loaded the historical price data of Bitcoin (BTC-USDT) from a CSV file into a pandas DataFrame. This data includes information about the opening and closing prices, high and low prices, and the trading volume for each hourly period.
+
+Feature Engineering: We've created additional features that might be relevant for predicting the closing price, specifically lagged values of the closing price (i.e., the closing price from one, twenty-four, forty-eight, and seventy-two hours ago).
+
+Data Splitting: We've split our data into a training set (containing the first 80% of the data) and a test set (containing the last 20% of the data). This will allow us to evaluate how well our model performs on unseen data.
+
+Model Training: We've trained two types of regression models, a Random Forest and a Gradient Boosting regressor, using the features we created and the 'closePrice' as the target. Both of these models are ensemble learning methods, which combine the predictions of multiple smaller models to improve overall predictive performance.
+
+Model Evaluation: We've calculated the Root Mean Squared Error (RMSE) for both models on the test set. This metric gives us an idea of how well our models are able to predict the closing price of Bitcoin, with lower values indicating better performance. So far, the Random Forest model and the Gradient Boosting model achieved the same RMSE, which suggests that they have similar predictive capabilities on this dataset.
+
+Next, we're planning to explore the predictions our models make, and possibly use these predictions to inform trading decisions.

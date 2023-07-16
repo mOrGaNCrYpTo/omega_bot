@@ -1,0 +1,11 @@
+Bequeath: A revolutionary NFT-based platform that allows people to put their last will and testament on the blockchain. Inheritance, property, and other assets can be assigned to NFTs and distributed accordingly. A deadman switch and Oracle integration ensure the will is executed even if the worst happens. This project is complex and has a lot of potential, but it's a long-term play. 📜💰
+
+TIME: A cryptocurrency with multiple digits representing years, months, weeks, days, and hours. It can be used to pay for services, rentals, and anything else on a time basis. A universal currency for time-based transactions. ⏳💸
+
+SECRETS (SHHH): An OnlyFans-style platform with its own cryptocurrency. Content creators can sell their content or make it available for a certain amount of TIME. They can also take private requests and assign exclusive content rights to their customers. The content lives on decentralized storage systems like IPFS or Arweave. This project is relatively straightforward and has a proven market, making it a good candidate for a quick launch. 📸💰
+
+TRUST: A proposed coin for a decentralized reputation system. Users earn TRUST by being reliable and honest in their transactions and lose it if they scam people or break their promises. A way to build trust in the crypto community and encourage good behavior. 🤝💎
+
+GIVE: A proposed coin for charitable donations. Users can donate GIVE to their favorite charities, and the charities can use it to fund their projects. A way to make giving more transparent and efficient. 🎁❤️
+
+SECRETS V2: An idea for the next version of SECRETS, integrating product purchases into the platform. Users can buy products for the creators to try, and everyone gets a kickback from the product sales markups. A potential revenue stream and a way to make the platform more interactive. 🛍️💰

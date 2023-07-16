@@ -1,0 +1,32 @@
+from pyalgotrade.technical import ma, stats
+import numpy as np
+
+class BaseMarketCondition:
+    def __init__(self, feed, instrument, lookbackPeriod):
+        self.__sma = ma.SMA(feed[instrument].getCloseDataSeries(), lookbackPeriod)
+        self.__stdDev = stats.StdDev(feed[instrument].getCloseDataSeries(), lookbackPeriod)
+        self.__instrument = instrument
+        self.__feed = feed
+
+    def getMarketCondition(self):
+        price = self.__feed[self.__instrument].getClose()
+        if price > self.__sma[-1]:
+            return "Bull"
+        elif price < self.__sma[-1]:
+            return "Bear"
+        elif self.__stdDev[-1] < np.std(self.__sma):
+            return "Sideways"
+        elif self.__stdDev[-1] > np.std(self.__sma) + 0.05:  # Threshold for high volatility
+            return "HighVolatility"
+        elif self.__stdDev[-1] < np.std(self.__sma) - 0.05:  # Threshold for low volatility
+            return "LowVolatility"
+        else:
+            return "Undefined"
+
+# This is a very basic implementation and the thresholds and rules are quite arbitrary. You would need to adjust 
+# them based on your specific needs and observations of the market.
+
+# Once you have defined the market conditions, you can then use this information to switch between different 
+# strategies or adjust the parameters of your strategy. For example, you might use a more aggressive strategy in a
+# bull market and a more conservative strategy in a bear market. Or you might adjust the stop loss and take profit 
+# levels based on the volatility of the market
