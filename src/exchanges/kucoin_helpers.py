@@ -1,6 +1,3 @@
-# kucoin_helpers.py
-# This file contains helper functions for the Kucoin exchange.
-
 import numpy as np
 import talib
 import logging
@@ -69,8 +66,8 @@ class KucoinTradingBot:
         bb_bands = talib.BollingerBands(feed['close'], period= bbandsPeriod, numStdDev=bbandsStdDev)
 
         # Bollinger Bands again. Do I need both?
+        # Bollinger Bands
         upper_band, middle_band, lower_band = talib.BBANDS(feed['close'], timeperiod=20, nbdevup=2, nbdevdn=2, matype=0)
-
         # RSI        
         rsi = talib.RSI(feed['close'], timeperiod=rsiPeriod)
 
@@ -84,7 +81,8 @@ class KucoinTradingBot:
         aroonosc = talib.AROON(feed['high'], feed['low'], timeperiod=aroonPeriod, indicator='aroonosc')
 
         # Calculate the ATR value
-        atr = talib.ATR(feed['high'], feed['low'], feed['close'], timeperiod=atrPeriod)[-1]
+        # AARON
+        aroonosc = talib.AROON(feed['high'], feed['low'], timeperiod=aroonPeriod, indicator='aroonosc')
 
         # Check if the EMAs are crossed
         long_position = ema50[-1] > ema100[-1]
@@ -279,4 +277,3 @@ def calculate_take_profit_price(current_price, stop_loss_price):
 
 def calculate_stop_loss_price(self, current_price, atr, atr_multiplier=1):
     return current_price - (atr * atr_multiplier)
-
