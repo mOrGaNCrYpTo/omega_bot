@@ -2,19 +2,18 @@ pandas
 numpy
 matplotlib
 python-kucoin
-# backtrader
-# tensorflow
+ta-lib
+tensorflow
 # pyalgotrade
 # redis
 # scikit-fuzzy
-joblib>=1.1.1
+joblib
 # stable_baselines3
 # gym
-requests<3,>=2.21.0
+requests
 # websockets
 # sklearn3
-keras<2.13,>=2.12.0
-# tensorflow
+keras
 FuzzyTM
 clyent
 stable_baselines3
